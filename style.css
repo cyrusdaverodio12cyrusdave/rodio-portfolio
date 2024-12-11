@@ -1,0 +1,316 @@
+body {
+    color: white;
+    font-family: "Arial";
+    margin: 0;
+    background-color: black;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+.container {
+    background-color: #080808;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: x-large;
+}
+
+.container .item {
+    display: flex;
+}
+
+.container .item .item-1 {
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.container-2 {
+    display: flex;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-2 .item-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: left;  
+    text-align: left;
+    max-width: 600px;
+}
+
+.me {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.highlight {
+    color: red;
+}
+
+.container-2 .item-2 .item-2-1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.container-2 .item-2 .item-2-2 {
+    
+}
+
+.portfolio {
+    text-align: center;
+    padding: 10px 20%;
+    background-color: black;
+    color: white;
+}
+
+.portfolio h2 {
+    font-size: 30px;  /* Adjusted for better visibility */
+    margin-bottom: 30px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;  
+    justify-items: center; 
+    align-items: center; 
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222; /* Fallback for images */
+}
+
+.portfolio-item img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    transition: transform 0.3s ease; 
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); 
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item .overlay p {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1; /* Make overlay visible on hover */
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the modal (expanded image view) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.expanded-img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f1f1f1;
+}
+
+.service {
+    text-align: center;
+    padding: 10px 20%;
+    background-color: black;
+    color: white;
+}
+
+.service h2 {
+    font-size: 30px;  /* Adjusted for better visibility */
+    margin-bottom: 30px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensures a 2x2 grid layout */
+    gap: 20px; /* Space between grid items */
+    justify-items: center;
+    align-items: center; 
+}
+
+.service-item {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transition 0.3s ease;
+}
+
+.service-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.service-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.service-item .overlay p {
+    color: white;
+    font-size: 18px; /* Default font size */
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    transition: font-size 0.3s ease; /* Smooth size transition */
+}
+
+.service-item:hover .overlay p {
+    font-size: 16px; /* Slightly smaller on hover */
+}
+
+
+.service-title {
+    margin-top: 10px;
+}
+
+.service-title p {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.contact {
+    text-align: center;
+    padding: 10px 20%;
+    background-color: black;
+    color: white;
+}
+
+.contact h2 {
+    font-size: 30px;  /* Adjusted for better visibility */
+    margin-bottom: 30px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;  
+    justify-items: center; 
+    align-items: center; 
+}
+
+.contact-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.contact-title {
+    margin-top: 10px;
+}
+
+.contact-title p {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+a[href^="tel:"] {
+    color: inherit; /* Ensures the link inherits the text color */
+    text-decoration: none; /* Removes the underline */
+}
