@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Cyrus Dave Rodio: Works</title>
+    <style>
+        /* Modal container styling */
+        .modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        /* Expanded image styling */
+        .expanded-img {
+            max-width: 90%; /* Scale down if image is too large */
+            max-height: 90%;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <a href="index.html" class="link"><b>Cyrus Dave Rodio — <span class="highlight">Works</b></span></a>
+        </div>
+        <div class="item">
+            <div class="item-1">
+                <a href="index.html" class="link">Home</a>
+            </div>
+            <div class="item-1">
+                <a href="service.html" class="link">Service</a>
+            </div>
+            <div class="item-1">
+                <a href="works.html" class="link"><span class="highlight">Works</span></a>
+            </div>
+            <div class="item-1">
+                <a href="contact.html" class="link">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio">
+        <h2>Photography</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="works/photography/1.jpg" alt="1" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Beaming With Happiness</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/photography/2.jpg" alt="2" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>A Smile that Speaks</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/photography/3.jpg" alt="3" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>The Forest of Her Dreams</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/photography/4.jpg" alt="4" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>The Dreamer’s Soul</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/photography/5.jpg" alt="5" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Focused and Fierce</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/photography/6.jpg" alt="6" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>A Dreamer at Heart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="works/photography/7.jpg" alt="7" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Eyes Full of Stories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio">
+        <h2>Graphic Design</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="works/graphic design/BILLIE EILISH.png" alt="Billie Eilish" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Billie Eilish</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/flow g.png" alt="Flow G" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Flow G</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/GIVEON.png" alt="Give On" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Give On</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/khalid.png" alt="Khalid" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Khalid</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/poster1.png" alt="Frank Ocean" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Frank Ocean</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/TEENAGE PEBER.png" alt="Teenage Fever" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Teenage Fever</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/typographyz [Recovered].png" alt="Teenage Fever 2" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Teenage Fever 2</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="works/graphic design/magazine cover1.png" alt="Magazine Cover Frank Ocean" onclick="expandImage(this)">
+                <div class="overlay">
+                    <p>Magazine Cover Frank Ocean</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="image-modal" class="modal" onclick="closeModal(event)">
+        <span class="close-btn" onclick="closeModal(event)">&times;</span>
+        <img id="expanded-img" class="expanded-img" src="" alt="Expanded Image">
+    </div>
+    
+    <script>
+        // Function to expand the image
+        function expandImage(img) {
+            var modal = document.getElementById("image-modal");
+            var expandedImg = document.getElementById("expanded-img");
+            modal.style.display = "flex"; // Change to 'flex' for centering content
+            expandedImg.src = img.src; // Set the src of the expanded image
+        }
+
+        // Function to close the modal when clicked outside or ESC is pressed
+        function closeModal(event) {
+            // Close modal only if the background (not the image) is clicked
+            if (event.target === document.getElementById("image-modal") || event.target === document.querySelector(".close-btn")) {
+                var modal = document.getElementById("image-modal");
+                modal.style.display = "none";
+            }
+        }
+
+        // Close modal with ESC key
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeModal(event);
+            }
+        });
+    </script>
+</body>
+</html>
